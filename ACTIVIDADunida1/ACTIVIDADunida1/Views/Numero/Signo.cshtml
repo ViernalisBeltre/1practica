@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Signo";
+}
+
+<h2>Comprobar el signo de un número</h2>
+
+
+@using (Html.BeginForm("Signo", "Numero", FormMethod.Get))
+{
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" name="numero" value="numero" />
+    <button type="submit">Comprobar</button>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.Resultado))
+{
+    <div style="margin-top:10px;">
+        <strong>Resultado:</strong>
+        <p>@ViewBag.Resultado</p>
+    </div>
+}
+
+
